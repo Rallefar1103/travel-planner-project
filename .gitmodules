@@ -1,0 +1,21 @@
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/Rallefar1103/travel-planner-frontend.git
+[submodule "graphql-server"]
+	path = graphql-server
+	url = https://github.com/Rallefar1103/travel-planner-graphql-server.git
+[submodule "user-auth"]
+	path = user-auth
+	url = https://github.com/Rallefar1103/travel-planner-user-auth.git
+[submodule "core"]
+	path = core
+	url = https://github.com/Rallefar1103/travel-planner-core.git
+[submodule "external-apis"]
+	path = external-apis
+	url = https://github.com/Rallefar1103/travel-planner-external-apis.git
+[submodule "recommender"]
+	path = recommender
+	url = https://github.com/Rallefar1103/travel-planner-recommender.git
+[submodule "common"]
+	path = common
+	url = https://github.com/Rallefar1103/travel-planner-common.git
