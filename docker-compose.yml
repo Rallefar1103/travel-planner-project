@@ -1,39 +1,39 @@
 version: "3.8"
 services:
   frontend:
-    build: ./path/to/frontend
+    build: ./frontend
     ports:
       - "3000:3000"
     depends_on:
-      - graphql
+      - graphql-server
 
-  graphql:
-    build: ./path/to/graphql
+  graphql-server:
+    build: ./graphql-server
     ports:
       - "9000:9000"
     environment:
       PORT: 9000
 
   recommender:
-    build: ./path/to/recommender
+    build: ./recommender
     ports:
       - "6000:6000"
     environment:
       PORT: 6000
 
-  external_apis:
-    build: ./path/to/external_apis
+  external-apis:
+    build: ./external-apis
     ports:
       - "7000:7000"
     environment:
       PORT: 7000
 
   core:
-    build: ./path/to/core
+    build: ./core
     ports:
       - "8000:8000"
     depends_on:
-      - external_apis
+      - external-apis
       - recommender
     environment:
       PORT: 8000
