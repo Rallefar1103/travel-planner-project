@@ -1,0 +1,28 @@
+version: "3"
+services:
+  core:
+    build: ./path/to/core
+    ports:
+      - "3001:3000"
+
+  external_apis:
+    build: ./path/to/external_apis
+    ports:
+      - "3002:3000"
+
+  graphql:
+    build: ./path/to/graphql
+    ports:
+      - "3003:3000"
+
+  recommender:
+    build: ./path/to/recommender
+    ports:
+      - "3004:3000"
+
+  frontend:
+    build: ./path/to/frontend
+    ports:
+      - "3000:80"
+#docker-compose up
+#
