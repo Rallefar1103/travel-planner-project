@@ -1,28 +1,42 @@
-version: "3"
+version: "3.8"
 services:
-  core:
-    build: ./path/to/core
+  frontend:
+    build: ./path/to/frontend
     ports:
-      - "3001:3000"
-
-  external_apis:
-    build: ./path/to/external_apis
-    ports:
-      - "3002:3000"
+      - "3000:3000"
+    depends_on:
+      - graphql
 
   graphql:
     build: ./path/to/graphql
     ports:
-      - "3003:3000"
+      - "9000:9000"
+    environment:
+      PORT: 9000
 
   recommender:
     build: ./path/to/recommender
     ports:
-      - "3004:3000"
+      - "6000:6000"
+    environment:
+      PORT: 6000
 
-  frontend:
-    build: ./path/to/frontend
+  external_apis:
+    build: ./path/to/external_apis
     ports:
-      - "3000:80"
-#docker-compose up
-#
+      - "7000:7000"
+    environment:
+      PORT: 7000
+
+  core:
+    build: ./path/to/core
+    ports:
+      - "8000:8000"
+    depends_on:
+      - external_apis
+      - recommender
+    environment:
+      PORT: 8000
+#docker-compose up --build
+#docker-compose up -d --build
+#docker-compose down
